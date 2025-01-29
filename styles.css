@@ -1,4 +1,4 @@
-/* Estilos generales */
+
 body {
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Letrero arriba de los botones */
+
 .titulo {
     font-size: 24px;
     font-weight: bold;
@@ -19,15 +19,15 @@ body {
 }
 
 
-/* Contenedor de botones */
+
 .button-container {
     display: grid;
-    grid-template-columns: repeat(2, 150px); /* 2 columnas de 150px de ancho */
-    grid-template-rows: repeat(5, 80px); /* 5 filas de 80px de alto */
-    gap: 30px; /* Espacio entre botones */
+    grid-template-columns: repeat(2, 150px); 
+    grid-template-rows: repeat(5, 80px); 
+    gap: 30px; 
 }
 
-/* Estilos de los botones */
+
 button {
     padding: 20px;
     font-size: 18px;
@@ -35,20 +35,20 @@ button {
     color: #fff;
     background-color: #006aff;
     border: none ;
-    border-radius: 20px; /* Bordes redondeados */
+    border-radius: 20px; 
     cursor: pointer;
-    box-shadow: 0 8px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+    box-shadow: 0 8px 6px rgba(0, 0, 0, 0.2); 
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Efecto al pasar el mouse */
+
 button:hover {
     background-color: #0056b3;
-    transform: scale(1.05); /* Ligero aumento de tamaño */
+    transform: scale(1.05); 
 }
 
-/* Efecto al hacer clic */
+
 button:active {
     background-color: #004080;
-    transform: scale(0.95); /* Ligera reducción de tamaño */
+    transform: scale(0.95); 
 }

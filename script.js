@@ -1,5 +1,5 @@
 function openTimer() {
-    // Abre una nueva ventana con el cronómetro
+
     const newWindow = window.open("", "_blank", "width=400,height=200");
     newWindow.document.write(`
         <!DOCTYPE html>
