@@ -1,29 +1,197 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botones con Cronómetro</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Giancarlo Apango - Software Engineer & Creative Problem Solver</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for a cleaner aesthetic */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* GitHub Dark Mode background */
+        }
+        .hero-background {
+            /* Subtle radial gradient for depth */
+            background: radial-gradient(circle at 50% 10%, #1f2a37 0%, #0d1117 80%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Style for the typing effect (optional animation) */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #6ee7b7; } /* green-300 */
+        }
+        .typewriter-text {
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid #6ee7b7; /* The typewriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .05em; /* Adjust as needed */
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        /* Custom glow effect for the card */
+        .glow-card {
+            box-shadow: 
+                0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                0 2px 4px -2px rgba(0, 0, 0, 0.1),
+                0 0 40px rgba(16, 185, 129, 0.2); /* Subtle green glow */
+            backdrop-filter: blur(8px);
+            background-color: rgba(30, 41, 59, 0.6); /* Slate-800 with transparency */
+        }
+    </style>
 </head>
-<body>
-    <!-- Letrero arriba de los botones -->
-    <h1 class="titulo">Selecciona tu parada</h1>
+<body class="text-white">
 
-    <!-- Contenedor de botones -->
-    <div class="button-container">
-        <button onclick="openTimer()">Botón 1</button>
-        <button onclick="openTimer()">Botón 2</button>
-        <button onclick="openTimer()">Botón 3</button>
-        <button onclick="openTimer()">Botón 4</button>
-        <button onclick="openTimer()">Botón 5</button>
-        <button onclick="openTimer()">Botón 6</button>
-        <button onclick="openTimer()">Botón 7</button>
-        <button onclick="openTimer()">Botón 8</button>
-        <button onclick="openTimer()">Botón 9</button>
-        <button onclick="openTimer()">Botón 10</button>
+    <div class="hero-background">
+        <div class="max-w-4xl w-full mx-auto p-6 md:p-10">
+
+            <!-- Professional Header Card -->
+            <div id="header-card" class="glow-card rounded-xl p-8 md:p-12 transition duration-500 hover:shadow-xl">
+                
+                <!-- Profile Section -->
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
+                    
+                    <!-- Avatar and Name -->
+                    <div class="flex-shrink-0">
+                        <img 
+                            src="https://placehold.co/120x120/10b981/ffffff?text=JD" 
+                            onerror="this.onerror=null; this.src='https://placehold.co/120x120/10b981/ffffff?text=JD'"
+                            alt="Profile Picture Placeholder" 
+                            class="w-24 h-24 md:w-32 md:h-32 rounded-full ring-4 ring-green-500/50 object-cover">
+                    </div>
+
+                    <!-- Introduction Text -->
+                    <div class="text-center md:text-left">
+                        <p class="text-sm font-medium text-green-400 uppercase tracking-widest mb-1">Portfolio Landing</p>
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+                            Hi, I'm <span class="text-green-400">Jane Doe</span>.
+                        </h1>
+                        <h2 class="text-xl md:text-2xl font-light text-gray-300 mt-2">
+                            I build scalable solutions and beautiful experiences.
+                        </h2>
+                        
+                        <!-- Interactive/Fascinating Tagline -->
+                        <div class="mt-4 md:mt-6">
+                            <p class="typewriter-text text-lg text-teal-300 max-w-full md:max-w-xl border-r pr-2">
+                                Solving complex problems with elegance since 2018.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bio & Call to Action -->
+                <div class="mt-8 pt-6 border-t border-gray-700/50">
+                    <p class="text-gray-400 text-base md:text-lg mb-6">
+                        I specialize in full-stack development with a passion for clean architecture and robust performance. My focus is on transforming intricate business requirements into intuitive, high-impact software. I am currently seeking a challenging Senior Software Engineer role.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        
+                        <!-- Main Call to Action: Download Resume -->
+                        <button onclick="handleDownloadResume()" class="flex-1 text-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg shadow-green-500/30 active:scale-[.98]">
+                            Download Full Resume (PDF)
+                        </button>
+                        
+                        <!-- Secondary Call to Action: View Projects -->
+                        <a href="#projects-section" class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-gray-200 font-bold py-3 px-6 rounded-lg transition duration-300 border border-slate-600 active:scale-[.98]">
+                            Explore My Work
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer/Contact Links -->
+                <div class="mt-8 text-center text-gray-500 text-sm">
+                    <p class="mb-2">Connect with me:</p>
+                    <div class="flex justify-center space-x-6">
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com/in/janedoe" target="_blank" class="hover:text-green-400 transition duration-200">
+                            LinkedIn
+                        </a>
+                        <!-- GitHub -->
+                        <a href="https://github.com/janedoe" target="_blank" class="hover:text-green-400 transition duration-200">
+                            GitHub
+                        </a>
+                        <!-- Email -->
+                        <a href="mailto:jane.doe@email.com" class="hover:text-green-400 transition duration-200">
+                            jane.doe@email.com
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Message Box (used instead of alert) -->
+            <div id="message-box" class="fixed bottom-5 right-5 p-4 bg-green-600 text-white rounded-lg shadow-2xl opacity-0 transition-opacity duration-300 z-50">
+                
+            </div>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Use a placeholder function for demonstrating the primary CTA
+        function handleDownloadResume() {
+            showMessage('The resume download process would start here!', 3000);
+            
+            // In a real application, you would use a function like this:
+            /*
+            const resumePath = 'path/to/your/jane_doe_resume.pdf';
+            const link = document.createElement('a');
+            link.href = resumePath;
+            link.download = 'Jane_Doe_Resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            */
+        }
+
+        // Custom function to display messages instead of using alert()
+        function showMessage(message, duration = 2000) {
+            const msgBox = document.getElementById('message-box');
+            msgBox.textContent = message;
+            msgBox.classList.remove('opacity-0');
+            msgBox.classList.add('opacity-100');
+            
+            setTimeout(() => {
+                msgBox.classList.remove('opacity-100');
+                msgBox.classList.add('opacity-0');
+            }, duration);
+        }
+
+        // Simple JavaScript interaction (optional: follows mouse movement)
+        const card = document.getElementById('header-card');
+        const root = document.documentElement;
+
+        // Only add interaction on desktop for better performance/usability
+        if (window.innerWidth > 768) {
+            document.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                // Simple rotation and scaling effect based on mouse position
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 50;
+                const rotateY = (centerX - x) / 50;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            });
+
+            document.addEventListener('mouseleave', () => {
+                // Reset card on mouse leave
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+            });
+        }
+    </script>
 </body>
 </html>
